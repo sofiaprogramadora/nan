@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+
+<ul>
+<p>
+	<strong>Projects</strong>
+	<% @user.middle_tables.each do |i| %>
+		<% if @user.id == i.user.id %>
+			<li><%= i.project.title %></li>
+		<% end %>
+	<% end %>
+</p>
+</ul>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
